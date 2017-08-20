@@ -1,0 +1,5 @@
+#!/bin/bash
+cp @PROJECT_BINARY_DIR@/wrappers/qball-configure.fixed.ac @PROJECT_BINARY_DIR@/3rdparty/qball_fixed/configure.ac
+autoreconf -i @PROJECT_BINARY_DIR@/3rdparty/qball_fixed
+mkdir -p @PROJECT_BINARY_DIR@/3rdparty/qball_fixed/finalbin
+FC="ftn -g" CXX="CC -g" CC="cc -g" @PROJECT_BINARY_DIR@/3rdparty/qball_fixed/configure --with-xerces-prefix=@CMAKE_INSTALL_PREFIX@ --prefix=@PROJECT_BINARY_DIR@/3rdparty/qball_fixed/finalbin

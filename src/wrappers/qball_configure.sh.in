@@ -1,0 +1,4 @@
+#!/bin/bash
+cp @PROJECT_BINARY_DIR@/wrappers/qball-configure.ac @PROJECT_BINARY_DIR@/3rdparty/qball/configure.ac
+autoreconf -i @PROJECT_BINARY_DIR@/3rdparty/qball
+FC="ftn -g" CXX="CC -g" CC="cc -g" @PROJECT_BINARY_DIR@/3rdparty/qball/configure --with-xerces-prefix=@CMAKE_INSTALL_PREFIX@ --prefix=@CMAKE_INSTALL_PREFIX@
